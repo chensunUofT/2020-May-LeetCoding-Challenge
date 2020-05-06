@@ -54,4 +54,3 @@ There're some amazing solutions from discussion:
           return num
   ```
 
-  
