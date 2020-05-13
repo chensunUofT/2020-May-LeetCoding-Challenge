@@ -1,0 +1,33 @@
+<https://leetcode.com/problems/valid-perfect-square/>
+
+Binary Search:
+
+```python
+class Solution:
+    def isPerfectSquare(self, num: int) -> bool:
+        if num in [0,1]:
+            return True
+        low, high = 0, num
+        while low < high:
+            mid = (low + high) // 2
+            sq = mid ** 2
+            if sq == num:
+                return True
+            elif sq > num:
+                high = mid
+            else:
+                low = mid + 1
+        return False
+```
+
+Newton's Method:
+
+```python
+class Solution:
+    def isPerfectSquare(self, num: int) -> bool:
+        x = num
+        while x ** 2 > num:
+            x = (x + num / x) // 2
+        return x ** 2 == num
+```
+
