@@ -30,5 +30,6 @@ class Solution:
         return ''.join(stack[:-k or None]).lstrip('0') or '0'
 ```
 
-
+A Pythonic trick here is the `stack[:-k or None]` as [explained here](https://stackoverflow.com/questions/15627312/what-value-do-i-use-in-a-slicing-range-to-include-the-last-value-in-a-numpy-arra/15627413#15627413). If `k` is greater than `0`, `stack[:-k]` will definitely give you the list without the last `k` elements, which is want we want; However, `stack[:-0]`, which is equivalent to `stack[:0]`, returns an empty list instead of the whole list itself as we expect.  
+To fix that, use `-k or None` as the ending index of the list, so that when `k` equals `0`, `0 or None` gives you a `None` and `stack[:None]` is just `stack` as discussed [here](https://stackoverflow.com/questions/30622809/python-list-slicing-with-none-as-argument).
 

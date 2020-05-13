@@ -1,5 +1,7 @@
 <https://leetcode.com/problems/flood-fill/>
 
+Use a `visited` matrix to record whether or not each point has been visited, paint the point if it's the old color but never visited, and expand that to the four adjacent points.
+
 ```python
 class Solution:
     
