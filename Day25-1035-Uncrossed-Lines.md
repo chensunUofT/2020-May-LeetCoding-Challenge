@@ -1,6 +1,6 @@
 <https://leetcode.com/problems/uncrossed-lines/>
 
-The algorithm is very similar with [Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/): use a 2-D `dp` array to record the result for two subarrays `A[0] ... A[i]` and `B[0] ... B[j]`.
+The algorithm is very similar with [Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/): use a 2-D `dp` array to record the result for two subarrays `A[0] ... A[i]` and `B[0] ... B[j]`, and update `dp[i][j]` with previous states.
 
 ```python
 class Solution:
